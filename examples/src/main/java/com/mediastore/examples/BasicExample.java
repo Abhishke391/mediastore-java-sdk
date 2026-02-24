@@ -15,7 +15,7 @@ public class BasicExample {
         // Initialize client
         MediaStoreClient client = new MediaStoreClient(
                 MediaStoreConfig.builder()
-                        .apiKey("sk_live_d78b543972b251b9027a6a2dcaa278fc")
+                        .apiKey("")
                         .baseUrl("http://localhost:8081")
                         .build()
         );
