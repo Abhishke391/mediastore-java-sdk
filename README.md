@@ -1,103 +1,78 @@
-## Installation
+# MediaStore Java SDK
 
-[![](https://jitpack.io/#Abhishke391/mediastore-java-sdk/v1.0.0)](https://jitpack.io/#Abhishke391/mediastore-java-sdk/v1.0.0)
+[![](https://jitpack.io/v/Abhishke391/mediastore-java-sdk.svg)](https://jitpack.io/#Abhishke391/mediastore-java-sdk)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-### Maven
+> Java client library for MediaStore - A fast, simple file storage and CDN service with automatic image optimization.
 
-Add the JitPack repository to your `pom.xml`:
-```xml
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
-```
+## ✨ Features
 
-Add the dependency:
-```xml
-<dependency>
-	    <groupId>com.github.Abhishke391</groupId>
-	    <artifactId>mediastore-java-sdk</artifactId>
-	    <version>v1.0.0</version>
-</dependency>
-```
+- 🚀 **Lightning Fast Uploads** - Powered by Go backend
+- 🖼️ **Automatic Image Variants** - Get thumbnail, medium, and large sizes automatically
+- 🔐 **Secure Authentication** - API key-based auth
+- 📊 **Storage Management** - Track usage and quotas
+- 🔧 **Spring Boot Ready** - Easy integration
 
-### Gradle
-```gradle
-repositories {
-    maven { url 'https://jitpack.io' }
-}
+## 📦 Installation
 
-dependencies {
-    implementation 'com.github.Abhishke391:mediastore-java-sdk:v1.0.0'
-}
-```
+[Your installation instructions here]
 
-## Quick Start
-```java
-import com.mediastore.sdk.MediaStoreClient;
-import com.mediastore.sdk.MediaStoreConfig;
+## 🚀 Quick Start
 
-public class Example {
-    public static void main(String[] args) throws Exception {
-        // Initialize client
-        MediaStoreClient client = new MediaStoreClient(
-            MediaStoreConfig.builder()
-                .apiKey("sk_live_your_api_key")
-                .baseUrl("http://localhost:8080")  // Change when deployed
-                .build()
-        );
-        
-        // Upload a file
-        java.io.File file = new java.io.File("photo.jpg");
-        com.mediastore.sdk.models.File uploaded = client.files().upload(file);
-        
-        System.out.println("✓ Uploaded: " + uploaded.getUrl());
-        System.out.println("✓ Variants: " + uploaded.getVariants());
-    }
-}
-```
+[Your quick start code here]
 
-## Features
+## 📖 Full Documentation
 
-✅ **File Operations**
-- Upload files (with automatic image variants)
-- List files
-- Delete files
-- Rename files
+[Link to detailed docs when you create them]
 
-✅ **Image Processing**
-- Automatic thumbnail generation
-- Multiple size variants (thumbnail, medium, large)
-- Parallel processing with Go backend
+## 🤝 Contributing
 
-✅ **Account Management**
-- Get account info
-- View storage usage
-- Usage statistics
+Contributions welcome! Please feel free to submit a Pull Request.
 
-✅ **API Key Management**
-- List API keys
-- Generate new keys
-- Revoke keys
+## 📝 License
 
-✅ **Spring Boot Ready**
-- Easy integration
-- Configuration via properties
-- Dependency injection support
+MIT License - see LICENSE file for details
+
+## 👨‍💻 Author
+
+**Abhishke391**
+
+⭐ Star this repo if you find it helpful!
 ```
 
 ---
 
-## **Step 5: Share Your Work!**
+### **2. Add GitHub Topics**
 
-Now anyone can use your SDK by:
+On your GitHub repo page:
+1. Click ⚙️ (gear icon) next to "About"
+2. Add topics: `java`, `sdk`, `file-storage`, `cdn`, `image-processing`, `spring-boot`, `maven`, `api-client`
+3. Makes your repo more discoverable!
 
-1. Adding JitPack repository
-2. Adding your dependency
-3. Running `mvn install`
+---
 
-**Share the link:**
+### **3. Add LICENSE File**
+
+Create `LICENSE` file in your repo:
 ```
-https://github.com/yourusername/mediastore-java-sdk
+MIT License
+
+Copyright (c) 2026 Abhishke391
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
