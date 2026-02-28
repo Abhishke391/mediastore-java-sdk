@@ -1,12 +1,10 @@
-# MediaStore Java SDK
-
-Java client library for MediaStore - a simple file storage and CDN service.
-
 ## Installation
+
+[![](https://jitpack.io/#Abhishke391/mediastore-java-sdk/v1.0.0)](https://jitpack.io/#Abhishke391/mediastore-java-sdk/v1.0.0)
 
 ### Maven
 
-Add the JitPack repository:
+Add the JitPack repository to your `pom.xml`:
 ```xml
 <repositories>
     <repository>
@@ -19,9 +17,9 @@ Add the JitPack repository:
 Add the dependency:
 ```xml
 <dependency>
-    <groupId>com.github.yourusername</groupId>
-    <artifactId>mediastore-java-sdk</artifactId>
-    <version>v1.0.0</version>
+	    <groupId>com.github.Abhishke391</groupId>
+	    <artifactId>mediastore-java-sdk</artifactId>
+	    <version>v1.0.0</version>
 </dependency>
 ```
 
@@ -32,7 +30,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.yourusername:mediastore-java-sdk:v1.0.0'
+    implementation 'com.github.Abhishke391:mediastore-java-sdk:v1.0.0'
 }
 ```
 
@@ -42,36 +40,64 @@ import com.mediastore.sdk.MediaStoreClient;
 import com.mediastore.sdk.MediaStoreConfig;
 
 public class Example {
-    public static void main(String[] args) {
-        // Create client
+    public static void main(String[] args) throws Exception {
+        // Initialize client
         MediaStoreClient client = new MediaStoreClient(
             MediaStoreConfig.builder()
                 .apiKey("sk_live_your_api_key")
-                .baseUrl("https://api.mediastore.com")
+                .baseUrl("http://localhost:8080")  // Change when deployed
                 .build()
         );
         
-        // Upload file
+        // Upload a file
         java.io.File file = new java.io.File("photo.jpg");
         com.mediastore.sdk.models.File uploaded = client.files().upload(file);
         
-        System.out.println("Uploaded: " + uploaded.getUrl());
+        System.out.println("✓ Uploaded: " + uploaded.getUrl());
+        System.out.println("✓ Variants: " + uploaded.getVariants());
     }
 }
 ```
 
 ## Features
 
-- ✅ File upload with automatic variants
-- ✅ File management (list, delete, rename)
-- ✅ Account management
-- ✅ API key management
-- ✅ Spring Boot integration ready
+✅ **File Operations**
+- Upload files (with automatic image variants)
+- List files
+- Delete files
+- Rename files
 
-## Documentation
+✅ **Image Processing**
+- Automatic thumbnail generation
+- Multiple size variants (thumbnail, medium, large)
+- Parallel processing with Go backend
 
-Full documentation at: [your-docs-url]
+✅ **Account Management**
+- Get account info
+- View storage usage
+- Usage statistics
 
-## License
+✅ **API Key Management**
+- List API keys
+- Generate new keys
+- Revoke keys
 
-MIT License
+✅ **Spring Boot Ready**
+- Easy integration
+- Configuration via properties
+- Dependency injection support
+```
+
+---
+
+## **Step 5: Share Your Work!**
+
+Now anyone can use your SDK by:
+
+1. Adding JitPack repository
+2. Adding your dependency
+3. Running `mvn install`
+
+**Share the link:**
+```
+https://github.com/yourusername/mediastore-java-sdk
