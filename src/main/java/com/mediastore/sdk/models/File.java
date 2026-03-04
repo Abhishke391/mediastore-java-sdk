@@ -50,4 +50,18 @@ public class File {
 
     public OffsetDateTime getUploadedAt() { return uploadedAt; }
     public void setUploadedAt(OffsetDateTime uploadedAt) { this.uploadedAt = uploadedAt; }
+
+    public String getTransformedUrl(int width, int height) {
+        return url + "?w=" + width + "&h=" + height;
+    }
+
+    public String getBlurredUrl(double blur) {
+        return url + "?blur=" + blur;
+    }
+
+    public String getCustomUrl(Map<String, String> params) {
+        StringBuilder sb = new StringBuilder(url + "?");
+        params.forEach((k, v) -> sb.append(k).append("=").append(v).append("&"));
+        return sb.toString();
+    }
 }
